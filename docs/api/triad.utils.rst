@@ -82,6 +82,14 @@ triad.utils.json
    :show-inheritance:
    :undoc-members:
 
+triad.utils.merge
+-----------------
+
+.. automodule:: triad.utils.merge
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 triad.utils.pandas\_like
 ------------------------
 

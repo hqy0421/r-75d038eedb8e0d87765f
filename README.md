@@ -20,6 +20,15 @@ pip install triad
 
 ## Release History
 
+### Unreleased
+
+* Add `merge_tables` to `triad.utils.merge` (also re-exported by `triad.utils.pyarrow`):
+  a column-wise three-way merge of Arrow tables keyed by a declared unique,
+  non-null business key. Conflicting rows/columns are reported with the key,
+  the column (or whole row) and each side's value/presence, and are only applied
+  after the caller resolves them; the merged table keeps the base schema's
+  column order and Arrow types.
+
 ### 1.0.4
 
 * Lossless large type normalization (keeps nullability, metadata and `keys_sorted`); add `normalize_large_types_in_table`

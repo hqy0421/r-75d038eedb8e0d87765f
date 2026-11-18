@@ -1309,3 +1309,27 @@ _COMPARATORS: Dict[pa.DataType, Callable[[Any, Any], bool]] = {
     pa.float32(): _float_eq,
     pa.float64(): _float_eq,
 }
+
+# re-exported here so ``triad.utils.pyarrow`` is a natural entry point for
+# Arrow table utilities. ``triad.utils.merge`` doesn't import this module, so
+# this can't create an import cycle.
+from triad.utils.merge import (  # noqa: E402, F401
+    CONFLICT_ADD_ADD,
+    CONFLICT_DELETE_MODIFY,
+    CONFLICT_VALUE,
+    MergeConflict,
+    MergeConflictError,
+    MergeError,
+    MergeKeyError,
+    MergeResult,
+    MergeSchemaError,
+    TableMergeConflict,
+    TableMergeResult,
+    merge_arrow_tables,
+    merge_pa_tables,
+    merge_tables,
+    merge_three_way,
+    resolve_conflicts,
+    resolve_merge_conflicts,
+    three_way_merge,
+)
